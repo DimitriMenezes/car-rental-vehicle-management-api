@@ -13,6 +13,12 @@ namespace Car.Rental.Vehicles.Management.Domain.EntitiesMapping
             builder.Property(i => i.Name)
                 .HasMaxLength(20)
                 .IsRequired(true);
+
+            builder.HasData(
+               new Category { Id = 1, Name = "Basic" },
+               new Category { Id = 2, Name = "Complet" },
+               new Category { Id = 3, Name = "Lux" }
+           );
         }
     }
 }
