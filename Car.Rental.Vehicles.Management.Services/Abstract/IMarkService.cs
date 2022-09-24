@@ -11,6 +11,6 @@ namespace Car.Rental.Vehicles.Management.Services.Abstract
         Task<ReturnModel> AddMark(MarkModel model);
         Task<ReturnModel> GetMark(int id);
         Task<ReturnModel> UpdateMark(MarkModel model);
-        Task<ReturnModel> DeletMark(int id);
+        Task<ReturnModel> DeleteMark(int id);
     }
 }

@@ -11,10 +11,10 @@ namespace Car.Rental.Vehicles.Management.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MarkController : ControllerBase
+    public class CarModelController : ControllerBase
     {
         private readonly ICarModelService _carModelService;
-        public MarkController(ICarModelService carModelService)
+        public CarModelController(ICarModelService carModelService)
         {
             _carModelService = carModelService;
         }

@@ -53,9 +53,9 @@ namespace Car.Rental.Vehicles.ManagementVehicles.Management.API.Controllers
 
         [HttpDelete("{id}")]
         [Authorize(Roles = "Operator")]
-        public async Task<ActionResult> DeletMark(int id)
+        public async Task<ActionResult> DeleteMark(int id)
         {
-            var result = await _markService.DeletMark(id);
+            var result = await _markService.DeleteMark(id);
             if (result.Errors != null)
                 return BadRequest(result.Errors);
 

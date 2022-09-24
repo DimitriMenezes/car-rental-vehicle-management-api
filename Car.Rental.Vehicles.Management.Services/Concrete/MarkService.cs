@@ -27,7 +27,7 @@ namespace Car.Rental.Vehicles.Management.Services.Concrete
             return new ReturnModel { Data = _mapper.Map<MarkModel>(entity) };
         }
 
-        public async Task<ReturnModel> DeletMark(int id)
+        public async Task<ReturnModel> DeleteMark(int id)
         {
             try
             {

@@ -24,6 +24,7 @@ namespace Car.Rental.Vehicles.Management.Services.IoC
 
             services.AddScoped<ICarModelService, CarModelService>();
             services.AddScoped<IMarkService, MarkService>();
+            services.AddScoped<IVehicleService, VehicleService>();
         }
     }
 }
