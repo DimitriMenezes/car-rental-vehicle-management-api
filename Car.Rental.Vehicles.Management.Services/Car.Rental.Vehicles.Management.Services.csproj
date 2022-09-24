@@ -21,10 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
     <Folder Include="FluentValidator\" />
     <Folder Include="Model\Request\" />
+    <Folder Include="Model\Return\" />
   </ItemGroup>
 
 </Project>

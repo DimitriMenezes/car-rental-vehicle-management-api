@@ -1,5 +1,4 @@
-﻿using Car.Rental.Vehicles.Management.Data.Repositories.Abstract;
-using Car.Rental.Vehicles.Management.Services.Abstract;
+﻿using Car.Rental.Vehicles.Management.Services.Abstract;
 using Car.Rental.Vehicles.Management.Services.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,24 +7,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Car.Rental.Vehicles.ManagementVehicles.Management.API.Controllers
+namespace Car.Rental.Vehicles.Management.API.Controllers
 {
-
-    [ApiController]    
+    [ApiController]
     [Route("[controller]")]
     public class MarkController : ControllerBase
     {
-        private readonly IMarkService _markService;
-        public MarkController(IMarkService markService)
+        private readonly ICarModelService _carModelService;
+        public MarkController(ICarModelService carModelService)
         {
-            _markService = markService;
+            _carModelService = carModelService;
         }
 
         [HttpPost]
         [Authorize(Roles = "Operator")]
-        public async Task<ActionResult> AddMark(MarkModel request)
+        public async Task<ActionResult> AddModel(CarModel request)
         {
-            var result = await _markService.AddMark(request);
+            var result = await _carModelService.AddModel(request);
             if (result.Errors != null)
                 return BadRequest(result.Errors);
 
@@ -34,17 +32,17 @@ namespace Car.Rental.Vehicles.ManagementVehicles.Management.API.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Operator")]
-        public async Task<ActionResult> GetMark(int id)
+        public async Task<ActionResult> GetModel(int id)
         {
-            var result = await _markService.GetMark(id);
+            var result = await _carModelService.GetModel(id);
             return Ok(result.Data);
         }
 
         [HttpPut]
         [Authorize(Roles = "Operator")]
-        public async Task<ActionResult> UpdateMark(MarkModel request)
+        public async Task<ActionResult> UpdateModel(CarModel request)
         {
-            var result = await _markService.UpdateMark(request);
+            var result = await _carModelService.UpdateModel(request);
             if (result.Errors != null)
                 return BadRequest(result.Errors);
 
@@ -53,9 +51,9 @@ namespace Car.Rental.Vehicles.ManagementVehicles.Management.API.Controllers
 
         [HttpDelete("{id}")]
         [Authorize(Roles = "Operator")]
-        public async Task<ActionResult> DeletMark(int id)
+        public async Task<ActionResult> DeleteModel(int id)
         {
-            var result = await _markService.DeletMark(id);
+            var result = await _carModelService.DeleteModel(id);
             if (result.Errors != null)
                 return BadRequest(result.Errors);
 

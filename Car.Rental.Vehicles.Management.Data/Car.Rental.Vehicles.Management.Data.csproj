@@ -12,8 +12,4 @@
     <ProjectReference Include="..\Car.Rental.Vehicles.Management.Domain\Car.Rental.Vehicles.Management.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
-
 </Project>

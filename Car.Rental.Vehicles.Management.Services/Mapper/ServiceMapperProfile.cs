@@ -11,7 +11,12 @@ namespace Car.Rental.Vehicles.Management.Services.Mapper
     {
         public ServicesMapperProfile()
         {
-            
+            CreateMap<MarkModel, Mark>()
+                .ReverseMap();
+            CreateMap<CarModel, Domain.Entities.Model>()
+               .ReverseMap();
+            CreateMap<VehicleModel, Vehicle>()
+               .ReverseMap();
         }
     }
 }

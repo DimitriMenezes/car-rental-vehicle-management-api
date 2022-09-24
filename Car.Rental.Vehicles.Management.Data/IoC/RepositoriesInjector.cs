@@ -9,8 +9,9 @@ namespace Car.Rental.Vehicles.Management.Data.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            
-            
+            services.AddScoped<IMarkRepository, MarkRepository>();
+            services.AddScoped<ICarModelRepository, CarModelRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
         }
     }
 }
