@@ -38,7 +38,8 @@ namespace Car.Rental.Vehicles.ManagementAPI
             services.AddMvc().AddFluentValidation();
             services.AddCors();
 
-            services.AddDbContext<VehicleContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            services.AddDbContext<VehicleContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                x => x.MigrationsHistoryTable("__EFMigrationsHistory", "vehicle"))
                 .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole())));
             services.AddScoped<DbContext, VehicleContext>();                       
 
