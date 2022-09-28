@@ -20,9 +20,4 @@
     <ProjectReference Include="..\Car.Rental.Vehicles.Management.Data\Car.Rental.Vehicles.Management.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\Request\" />
-    <Folder Include="Model\Return\" />
-  </ItemGroup>
-
 </Project>
